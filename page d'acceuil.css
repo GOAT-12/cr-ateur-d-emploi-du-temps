@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #e2e2e2, #c9d6ff);
+    color: #222;
+    padding: 24px;
+}
+
+.entête{
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    background: #ffffffaa;
+    backdrop-filter: blur(2px);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    margin-bottom: 16px;
+}
+
+.entête h1{
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.phrasse{
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.suivant{
+    display: inline-block;
+    padding: 12px 20px;
+    background: #7494ec;
+    color: #fff;
+    border: 0;
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: .2px;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(0,0,0,.15);
+    transition: transform .15s ease, box-shadow .15s ease, background .2s ease;
+}
+
+.suivant:hover{
+    background: #5f82ea;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.18);
+}
+
+form{
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+}
+
+@media (max-width: 480px){
+    .entête h1{ font-size: 26px; }
+}

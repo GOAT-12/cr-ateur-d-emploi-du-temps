@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Créateur d'emploi du temps - Aris/Dev</title>
+  <link rel="stylesheet" href="schedule_builder.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="schedule_builder.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>Créateur d'emploi du temps</h1>
+    <nav class="actions">
+      <button id="print-pdf" class="btn"><i class='bx bxs-file-pdf'></i>&nbsp;Imprimer / PDF</button>
+      <button id="clear-all" class="btn btn-ghost"><i class='bx bx-eraser'></i>&nbsp;Tout effacer</button>
+      <a href="login_page.html" class="btn btn-ghost"><i class='bx bx-log-out'></i>&nbsp;Déconnexion</a>
+    </nav>
+  </header>
+
+  <main class="builder container">
+    <section class="builder">
+      <form id="course-form" class="card" novalidate>
+        <h2>Ajouter un cours</h2>
+        <div class="row">
+          <label>
+            Intitulé
+            <input type="text" id="title" placeholder="Ex: Mathématiques" required>
+          </label>
+          <label>
+            Jour
+            <select id="day" required>
+              <option value="">Choisir...</option>
+              <option>Lundi</option>
+              <option>Mardi</option>
+              <option>Mercredi</option>
+              <option>Jeudi</option>
+              <option>Vendredi</option>
+              <option>Samedi</option>
+              <option>Dimanche</option>
+            </select>
+          </label>
+        </div>
+        <div class="row">
+          <label>
+            Début
+            <input type="time" id="start" required>
+          </label>
+          <label>
+            Fin
+            <input type="time" id="end" required>
+          </label>
+        </div>
+        <div class="row">
+          <button type="submit" class="btn">Ajouter / Mettre à jour</button>
+          <button type="button" id="reset-form" class="btn btn-ghost">Réinitialiser</button>
+        </div>
+        <small id="form-error" class="error"></small>
+      </form>
+
+      
+    </section>
+    <section class="card table-view">
+      <h2>Vue tableau</h2>
+      <div class="table-wrap">
+        <table id="schedule-table">
+          <thead>
+            <tr>
+              <th>Intitulé</th>
+              <th>Jour</th>
+              <th>Début</th>
+              <th>Fin</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card recap">
+      <h2>Récapitulatif</h2>
+      <div id="recap-content" class="recap-content" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <small>Aris/Dev — Générateur d'emploi du temps</small>
+  </footer>
+
+  <style>
+    @media print {
+      .topbar, .list, #course-form, .actions, .foot, .recap { display: none !important; }
+      body { background: #fff; }
+      .table-view { box-shadow: none !important; }
+      .table-view .table-wrap{ overflow: visible; }
+      #schedule-table{ width:100%; }
+      #schedule-table th:last-child, #schedule-table td:last-child{ display: none !important; }
+    }
+  </style>
+</body>
+</html>

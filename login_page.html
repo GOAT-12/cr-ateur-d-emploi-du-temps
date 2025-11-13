@@ -1,0 +1,124 @@
+cd <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion / Inscription - Aris/Dev</title>
+    <link rel="stylesheet" href="login_page.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <div class="form-box login">
+            <form action="" novalidate>
+                <h1>Connexion</h1>
+                <div class="input-box">
+                    <label for="login-username" class="sr-only">Nom d'utilisateur</label>
+                    <input id="login-username" name="username" type="text" placeholder="Nom d'utilisateur" required>
+                    <i class='bx bxs-user' aria-hidden="true"></i>
+                    <small class="error-message" aria-live="polite"></small>
+                </div>
+                <div class="input-box">
+                    <label for="login-password" class="sr-only">Mot de passe</label>
+                    <input id="login-password" name="password" type="password" placeholder="Mot de passe" required minlength="6">
+                    <button type="button" class="pw-toggle" aria-label="Afficher le mot de passe"><i class='bx bx-show'></i></button>
+                    <i class='bx bxs-lock-alt' aria-hidden="true"></i>
+                    <small class="error-message" aria-live="polite"></small>
+                </div>
+                <div class="forgot-link">
+                    <a href="#" id="forgot-open">Mot de passe oublié ?</a>
+                </div>
+                <button type="submit" class="btn">Se connecter</button>
+                <p>ou connectez-vous avec</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/_aris_ti_de/" target="_blank" rel="noopener"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://wa.me/90107500" target="_blank" rel="noopener"><i class='bx bxl-whatsapp'></i></a>
+                    <a href="https://github.com/GOAT-12?tab=overview&from=2025-05-01&to=2025-05-31" target="_blank" rel="noopener"><i class='bx bxl-github'></i></a>
+                    <a href="https://x.com/KpandjaAri6580" target="_blank" rel="noopener"><i class='bx bxl-twitter'></i></a>
+                    <a href="https://www.linkedin.com/in/aristide-kpandja-253b89353" target="_blank" rel="noopener"><i class='bx bxl-linkedin-square'></i></a>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box register">
+            <form action="" novalidate>
+                <h1>Inscription</h1>
+                <div class="input-box">
+                    <label for="reg-username" class="sr-only">Nom d'utilisateur</label>
+                    <input id="reg-username" name="username" type="text" placeholder="Nom d'utilisateur" required minlength="3">
+                    <i class='bx bxs-user' aria-hidden="true"></i>
+                    <small class="error-message" aria-live="polite"></small>
+                </div>
+                <div class="input-box">
+                    <label for="reg-email" class="sr-only">Adresse e-mail</label>
+                    <input id="reg-email" name="email" type="email" placeholder="Adresse e-mail" required>
+                    <i class='bx bxs-envelope' aria-hidden="true"></i>
+                    <small class="error-message" aria-live="polite"></small>
+                </div>
+                <div class="input-box">
+                    <label for="reg-password" class="sr-only">Mot de passe</label>
+                    <input id="reg-password" name="password" type="password" placeholder="Mot de passe" required minlength="8">
+                    <button type="button" class="pw-toggle" aria-label="Afficher le mot de passe"><i class='bx bx-show'></i></button>
+                    <i class='bx bxs-lock-alt' aria-hidden="true"></i>
+                    <small class="error-message" aria-live="polite"></small>
+                </div>
+                <div class="pw-strength" aria-live="polite">
+                    <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="4" aria-valuenow="0"></div>
+                    <span class="label">Force du mot de passe</span>
+                </div>
+                <button type="submit" class="btn">Créer un compte</button>
+                <p>ou inscrivez-vous avec</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/_aris_ti_de/" target="_blank" rel="noopener"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://wa.me/90107500" target="_blank" rel="noopener"><i class='bx bxl-whatsapp'></i></a>
+                    <a href="#"><i class='bx bxl-github'></i></a>
+                    <a href="https://x.com/KpandjaAri6580" target="_blank" rel="noopener"><i class='bx bxl-twitter'></i></a>
+                    <a href="https://www.linkedin.com/in/aristide-kpandja-253b89353" target="_blank" rel="noopener"><i class='bx bxl-linkedin-square'></i></a>
+                </div>
+            </form>
+        </div>
+
+
+        <div class="toggle-box">
+            <div class="toggle-panel toggle-left">
+                <h1>Bonjour, bienvenue !</h1>
+                <p>Vous n'avez pas de compte ?</p>
+                <button class="btn register-btn" type="button">S'inscrire</button>
+            </div>
+            <div class="toggle-panel toggle-right">
+                <h1>Content de vous revoir !</h1>
+                <p>Vous avez déjà un compte ?</p>
+                <button class="btn login-btn" type="button">Se connecter</button>
+            </div>
+        </div>
+    </div>
+    <div id="forgot-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="forgot-title" aria-hidden="true">
+        <div class="modal-dialog">
+            <h2 id="forgot-title">Réinitialiser le mot de passe</h2>
+            <form id="forgot-form" novalidate>
+                <div class="input-box">
+                    <label for="forgot-email" class="sr-only">Adresse e-mail</label>
+                    <input id="forgot-email" type="email" placeholder="Votre e-mail" required>
+                    <i class='bx bxs-envelope' aria-hidden="true"></i>
+                    <small class="error-message" aria-live="polite"></small>
+                </div>
+                <div class="otp-row" id="otp-row" hidden>
+                    <div class="input-box">
+                        <label for="otp-code" class="sr-only">Code</label>
+                        <input id="otp-code" type="text" placeholder="Code reçu" inputmode="numeric" minlength="4" maxlength="6">
+                        <i class='bx bxs-key' aria-hidden="true"></i>
+                        <small class="error-message" aria-live="polite"></small>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn" id="send-otp">Envoyer le code</button>
+                    <button type="button" class="btn" id="verify-otp" hidden>Vérifier</button>
+                    <button type="button" class="btn" id="forgot-close">Fermer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+    <script src="web site.js"></script>
+</body>
+</html>
